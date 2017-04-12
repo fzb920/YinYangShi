@@ -1,0 +1,9 @@
+.tongren_section {
+    position: relative;
+}
+.tongren_topbar {
+    width: 1200px;
+    height: 77px;
+    margin: 0 auto;
+    background-color: red;
+}

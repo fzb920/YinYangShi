@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    font: 14px "Microsoft Yahei";
+    overflow-x: hidden;
+    background-color: #2B2B2B;
+}
+
+h1 {
+    width: 900px;
+    margin: 40px auto 19px;
+    font: 32px "Microsoft Yahei";
+    text-align: center;
+    color: black;
+}

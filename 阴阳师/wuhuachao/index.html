@@ -1,0 +1,1360 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index-css/index.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css">
+    <!--搜索框-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--背景烟花-->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <!--天气-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--地图-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!--地图-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--背景烟花-->
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fireworks.js"></script>
+    <!--搜索框-->
+    <script src="js/jquery-latest.js" type="text/javascript"></script>
+    <script src="js/js.js" type="text/javascript"></script>
+    <!--地图-->
+    <script src="js/lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/raphael-min.js"></script>
+    <script type="text/javascript" src="js/res/chinaMapConfig.js"></script>
+    <script type="text/javascript" src="js/map-min.js"></script>
+    <link href="css/demo1.css" rel="stylesheet" />
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/demo11.js"></script>
+    <title>【爽游网】出境游_旅游攻略_自助游攻略_游记攻略_境外旅游 旅途永无止尽</title>
+    <style>
+        *{margin:0;padding:0;border: none;}
+        body { color: #333; text-align: center; font: 12px "微软雅黑";background-color: #dcf5ed; }
+        .mapTipText{width: 280px;height: 110px;background-color: #ffffff;}
+        .mapTipText .mapTipImg{height: 66px; width: 66px; float: left;border: 2px solid #ffffff; border-radius: 50%;overflow: hidden;margin: -12px 5px 0 -12px;}
+        .mapTipText .mapTipImg img{width: 100%;height: 100%;}
+        .mapTipText .mapTipList{float: left;margin-left: 4px;}
+        .mapTipText .mapTipList h2{text-align: left;}
+        .mapTipText .mapTipList h2 a{font-size: 24px; color: #262626;text-decoration:none;}
+        .mapTipText .mapTipList h2 a:hover{ color: #0085d2;}
+        .mapTipText .mapTipList h2 a span{font-size: 16px;margin-left: 3px;}
+        .mapTipText .mapTipList ul{ width: 203px;padding-right: 10px;}
+        .mapTipText .mapTipList ul li{list-style: none;float: left;padding: 7px 3px 0 3px;}
+        .mapTipText .mapTipList ul li a{color: #262626;text-decoration:none;}
+        .mapTipText .mapTipList ul li a:hover{background-color:#2ebcfe;color:#ffffff;}
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        body {
+            font: 14px "Microsoft Yahei";
+            overflow-x: hidden;
+            background-color: #2B2B2B;
+        }
+
+        h1 {
+            width: 900px;
+            margin: 40px auto 19px;
+            font: 32px "Microsoft Yahei";
+            text-align: center;
+            color: black;
+        }
+    </style>
+    <!--地图-->
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".mp").mouseover(function(){
+                $(this).find(".feng").show();
+            }).mouseout(function(){
+                $(this).find(".feng").hide();
+
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            var $animate = $('#animate');
+            var $opposite = $('#opposite');
+            $(".wrap").hover(function () {
+                $animate.removeClass();
+                $opposite.removeClass();
+                $animate.addClass("test");
+                $opposite.addClass('test2');
+            }, function () {
+                $animate.removeClass();
+                $opposite.removeClass();
+                $animate.addClass("test2");
+                $opposite.addClass('test');
+            });
+
+            $(".well-item").hover(function () {
+                $(this).find(".correct").children().removeClass();
+                $(this).find(".opposite").children().removeClass();
+                $(this).find(".correct").children().addClass("test");
+                $(this).find(".opposite").children().addClass('test2');
+            }, function () {
+                $(this).find(".correct").children().removeClass();
+                $(this).find(".opposite").children().removeClass();
+                $(this).find(".correct").children().addClass("test2");
+                $(this).find(".opposite").children().addClass('test');
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+<!--背景烟花-->
+<div class="demo" height="500" ; id="lym_canvas" style="float: left"></div>
+
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.fireworks.js"></script>
+<script type="text/javascript">
+    $('.demo').fireworks({
+        sound: false, // sound effect
+        opacity: 0.9,
+        width: '100%',
+        height: '100%'
+    });
+    //        document.getElementById("lym_canvas").height = 1000;
+</script>
+<!--搜索框-->
+<div class="player" style="z-index: 100">
+
+    <div class="logo">搜索</div>
+
+    <input type="text" class="input" label="What would you like to play?" placeholder="不是你的原则有多深 ">
+
+    <div role="button" class="searchButton" tabindex="0" style="-webkit-user-select: none; ">
+
+        <div class="searchIcon"></div>
+
+    </div>
+
+</div><!--End Player-->
+
+<!--头部开始-->
+<div class="header">
+    <!--轮播图-->
+    <div class="lunbo-box" id="lunbo-box">
+        <div class="screen" id="screen">
+            <ul>
+                <li><a href="#"><img src="index-images/header1.jpg" width="1349" height="450"></a></li>
+                <li><a href="#"><img src="index-images/header2.jpg" width="1349" height="450"></a></li>
+                <li><a href="#"><img src="index-images/header3.jpg" width="1349" height="450"></a></li>
+                <li><a href="#"><img src="index-images/header4.jpg" width="1349" height="450"></a></li>
+                <li><a href="#"><img src="index-images/header5.jpg" width="1349" height="450"></a></li>
+            </ul>
+            <ol>
+            </ol>
+            <div id="arrow" class="arrow">
+                    <span id="arrow-left" class="arrow-left">
+                        <img src="index-images/left.png" width="36" height="36">
+                    </span>
+                    <span id="arrow-right" class="arrow-right">
+                        <img src="index-images/right.png" width="36" height="36">
+                    </span>
+            </div>
+        </div>
+    </div>
+    <!--顶部导航-->
+    <div class="nav">
+        <div class="nav-left">
+
+            <ul>
+                <li><a href="#" target="_blank">国内游</a></li>
+                <li><a href="#" target="_blank">国外游</a></li>
+                <li><a href="#" target="_blank">美食推荐</a></li>
+                <li class="community">
+                    <a href="#">社区<i><s>◇</s></i></a>
+                    <div class="travel-nav">
+                        <a href="#">旅行论坛</a>
+                        <a href="#">旅行问答</a>
+                        <a href="#">旅行生活美学</a>
+                        <a href="#">旅途故事</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">最世界▪自由行</a>
+                    <span class="nav-gif"></span>
+                    <span class="nav-gif2"></span>
+                </li>
+                <li><a href="ranfang/index.html" target="_blank">机票</a></li>
+                <li><a href="#" target="_blank">酒店</a></li>
+                <li class="reserve">
+                    <a href="#">预定<i><s>◇</s></i></a>
+                    <div class="yuding-nav">
+                        <a href="#">好评酒店</a>
+                        <a href="#">一折机票</a>
+                        <a href="#">0元抢大餐</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-right fr">
+
+            <ul class="fl">
+                <li><a href="#"><img src="index-images/qq2.png" class="qq-logo"></a></li>
+                <li><a href="#"><img src="index-images/weixin2.png" class="weixin-logo"></a></li>
+                <li><a href="#"><img src="index-images/weibo2.png" class="weibo-logo"></a></li>
+                <li><a href="login4/index.html" target="_blank">注册</a></li>
+                <li><a href="#" target="_blank">登陆</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--中间子导航-->
+    <div class="subnav">
+    <div class="subnav-top">
+    <a href="#">目的地</a>
+    <a href="#">做行程</a>
+    <a href="#">买折扣</a>
+    <a href="#">订酒店</a>
+    </div>
+    <!--<div class="subnav-bottom"></div>-->
+    <div class="search">
+    <input type="text" class="search-box" placeholder="骚年 起来修仙了"/>
+    <input type="text" class="btn" value="搜索"/>
+    </div>
+    </div>
+    <!--<底部音乐&#45;&#45;&ndash;&gt;-->
+    <div class="music" style="z-index: 99">
+        <audio src="index-music/张靓颖 - 我的梦.mp3" autoplay controls class="audio"></audio>
+    </div>
+</div>
+<!--头部结束-->
+
+<!--猜你感兴趣部分开始-->
+<h1 style="z-index: 50; color: #00bbff">美景☞鉴赏</h1>
+<div class="well">
+    <div class="well-item">
+        <div class="correct"><img class="" src="images/bd5.jpg"/></div>
+        <div class="opposite">
+            <div class="">
+                <div class="opposite-content">
+                    <div class="opposite-content-text">
+                       你
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="well-item">
+        <div class="correct"><img class="" src="images/bd8.jpg"/></div>
+        <div class="opposite">
+            <div class="">
+                <div class="opposite-content">
+                    <div class="opposite-content-text lym_cls2">
+                        若
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="well-item">
+        <div class="correct"><img class="" src="images/bd6.jpg"/></div>
+        <div class="opposite">
+            <div class="">
+                <div class="opposite-content">
+                    <div class="opposite-content-text lym_cls3">
+                       安
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="well-item">
+        <div class="correct"><img class="" src="images/bd7.jpg"/></div>
+        <div class="opposite">
+            <div class="">
+                <div class="opposite-content">
+                    <div class="opposite-content-text lym_cls4">
+                        好
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="well-item">
+        <div class="correct"><img class="" src="images/bd9.jpg"/></div>
+        <div class="opposite">
+            <div class="">
+                <div class="opposite-content">
+                    <div class="opposite-content-text lym_cls5">
+                        便
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="well-item">
+        <div class="correct"><img class="" src="images/bd11.jpg"/></div>
+        <div class="opposite">
+            <div class="">
+                <div class="opposite-content">
+                    <div class="opposite-content-text lym_cls6">
+                       是
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="well-item">
+        <div class="correct"><img class="" src="images/bd12.jpg"/></div>
+        <div class="opposite">
+            <div class="">
+                <div class="opposite-content">
+                    <div class="opposite-content-text lym_cls7">
+                        晴
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="well-item">
+        <div class="correct"><img class="" src="images/bd14.jpg"/></div>
+        <div class="opposite">
+            <div class="">
+                <div class="opposite-content">
+                    <div class="opposite-content-text lym_cls8">
+                        天
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--自由行开始-->
+<div class="free-box">
+    <div class="free w">
+        <!--头部-->
+        <div class="free-top">
+            <img src="index-images/zworld-title.png" alt=""/>
+        </div>
+        <!--身体部分-->
+        <div class="free-body">
+            <div class="div11 fl" id="div11">
+                <ul id="div11ul">
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun11.jpg" width="340" height="145">
+                            <p></p>
+                            <span>广州直飞塞班岛5-7天自由行</span>
+                        </div>
+                        <i class="fl"><span>3400</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun12.jpg" width="340" height="145">
+                            <p></p>
+                            <span>在赤道山脉 在北极冰海</span>
+                        </div>
+                        <i class="fl"><span>4700</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun13.jpg" width="340" height="145">
+                            <p></p>
+                            <span>欧洲七国八日游</span>
+                        </div>
+                        <i class="fl"><span>13400</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun14.jpg" width="340" height="145">
+                            <p></p>
+                            <span>北极冰海 去看最蓝的天!</span>
+                        </div>
+                        <i class="fl"><span>8700</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun15.jpg" width="340" height="145">
+                            <p></p>
+                            <span>哈尔滨冰雪世界</span>
+                        </div>
+                        <i class="fl"><span>800</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun11.jpg" width="340" height="145">
+                            <p></p>
+                            <span>广州直飞塞班岛5-7天自由行</span>
+                        </div>
+                        <i class="fl"><span>3400</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="div12 fl" id="div12">
+                <ul id="div12ul">
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun21.jpg" width="340" height="145">
+                            <p></p>
+                            <span>新加坡5-7天自由行</span>
+                        </div>
+                        <i class="fl"><span>13880</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun22.jpg" width="340" height="145">
+                            <p></p>
+                            <span>泰国清莱白庙+黑庙一日游(含接送+午餐)</span>
+                        </div>
+                        <i class="fl"><span>4700</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun23.jpg" width="340" height="145">
+                            <p></p>
+                            <span>欧洲七国八日游</span>
+                        </div>
+                        <i class="fl"><span>13400</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun24.jpg" width="340" height="145">
+                            <p></p>
+                            <span>北京直飞首尔4-5天自由行(四星酒店,赠接送机)</span>
+                        </div>
+                        <i class="fl"><span>8700</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun25.jpg" width="340" height="145">
+                            <p></p>
+                            <span>台湾花莲花东纵谷包车一日游</span>
+                        </div>
+                        <i class="fl"><span>800</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun21.jpg" width="340" height="145">
+                            <p></p>
+                            <span>新加坡5-7天自由行</span>
+                        </div>
+                        <i class="fl"><span>3400</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="div13 fr" id="div13">
+                <ul id="div13ul">
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun31.jpg" width="340" height="145">
+                            <p></p>
+                            <span>全国多地直飞清迈5-6天自由行</span>
+                        </div>
+                        <i class="fl"><span>3400</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun32.jpg" width="340" height="145">
+                            <p></p>
+                            <span>北京/天津直飞东京</span>
+                        </div>
+                        <i class="fl"><span>4900</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun33.jpg" width="340" height="145">
+                            <p></p>
+                            <span>垦丁至花莲纵谷线包车一日游</span>
+                        </div>
+                        <i class="fl"><span>13800</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun34.jpg" width="340" height="145">
+                            <p></p>
+                            <span>泰国清迈厨艺学校烹饪课</span>
+                        </div>
+                        <i class="fl"><span>8700</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun35.jpg" width="340" height="145">
+                            <p></p>
+                            <span>大阪环球影城15周年庆典</span>
+                        </div>
+                        <i class="fl"><span>1800</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                    <li>
+                        <h3>限时特价</h3>
+                        <div class="bg-img">
+                            <img src="index-images/lun31.jpg" width="340" height="145">
+                            <p></p>
+                            <span>全国多地直飞清迈5-6天自由行</span>
+                        </div>
+                        <i class="fl"><span>2400</span>元起</i>
+                        <s class="fr">立即抢购</s>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--底部-->
+        <div class="free-footer">
+            <!--<ul>-->
+            <!--<li></li>-->
+            <!--<li></li>-->
+            <!--<li></li>-->
+            <!--<li></li>-->
+            <!--<li></li>-->
+            <!--</ul>-->
+            <div class="discount">
+                查看更多折扣
+            </div>
+        </div>
+    </div>
+</div>
+<!--自由行结束-->
+
+<!--游记开始-->
+<div class="travel-box">
+    <div class="travel w">
+        <div class="travel-top">
+            <h2>热门游记与话题</h2>
+        </div>
+        <div class="travel-body" id="travel-body">
+            <ul>
+                <li>
+                    <div class="travel-1">
+                        <div class="bigger"><img src="index-images/275x185-7.jpg"></div>
+                        <div class="user1"></div>
+                        <span>爽游大秘书<i></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-2">
+                        <div class="bigger"><img src="index-images/275x185-2.jpg"></div>
+                        <div class="user2"></div>
+                        <span> Dece<i class="user-sex"></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游 </p>
+                    </div>
+                    <div class="travel-3">
+                        <div class="bigger"><img src="index-images/275x185-22.jpg"></div>
+                        <div class="user3"></div>
+                        <span>bennypsr<i></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-4">
+                        <div class="bigger"><img src="index-images/275x185-25.jpg"></div>
+                        <div class="user4"></div>
+                        <span>熊烨<i></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-5">
+                        <div class="bigger"><img src="index-images/275x185-31.jpg"></div>
+                        <div class="user5"></div>
+                        <span> 路刻社<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-6">
+                        <div class="bigger"><img src="index-images/275x185-33.jpg"></div>
+                        <div class="user6"></div>
+                        <span> SYQ流星<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-7">
+                        <div class="bigger"><img src="index-images/275x185-37.jpg"></div>
+                        <div class="user7"></div>
+                        <span>dididar<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-8">
+                        <div class="bigger"><img src="index-images/275x185-38.jpg"></div>
+                        <div class="user8"></div>
+                        <span>Raymo<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="travel-1">
+                        <div class="bigger"><img src="index-images/index14.png"></div>
+                        <div class="user1"></div>
+                        <span>Greap<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-2">
+                        <div class="bigger"><img src="index-images/new2.jpg"></div>
+                        <div class="user2"></div>
+                        <span> EzloHsu<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-3">
+                        <div class="bigger"><img src="index-images/new3.jpg"></div>
+                        <div class="user3"></div>
+                        <span>Oves<i></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-4">
+                        <div class="bigger"><img src="index-images/new4.jpg"></div>
+                        <div class="user4"></div>
+                        <span>不乐同学<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-5">
+                        <div class="bigger"><img src="index-images/new5.jpg"></div>
+                        <div class="user5"></div>
+                        <span> xiaoshui<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-6">
+                        <div class="bigger"><img src="index-images/new6.jpg"></div>
+                        <div class="user6"></div>
+                        <span> FQ7944<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-7">
+                        <div class="bigger"><img src="index-images/new7.jpg"></div>
+                        <div class="user7"></div>
+                        <span>汇源兔<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-8">
+                        <div class="bigger"><img src="index-images/index7.png"></div>
+                        <div class="user8"></div>
+                        <span>Raymo<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="travel-1">
+                        <div class="bigger"><img src="index-images/new9.jpg"></div>
+                        <div class="user1"></div>
+                        <span>爽游大秘书<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-2">
+                        <div class="bigger"><img src="index-images/new10.jpg"></div>
+                        <div class="user2"></div>
+                        <span> Dece<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-3">
+                        <div class="bigger"><img src="index-images/new11.jpg"></div>
+                        <div class="user3"></div>
+                        <span>bennypsr<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-4">
+                        <div class="bigger"><img src="index-images/new12.jpg"></div>
+                        <div class="user4"></div>
+                        <span>熊烨<i></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-5">
+                        <div class="bigger"><img src="index-images/new13.jpg"></div>
+                        <div class="user5"></div>
+                        <span> 路刻社<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-6">
+                        <div class="bigger"><img src="index-images/new14.jpg"></div>
+                        <div class="user6"></div>
+                        <span> SYQ流星<i></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-7">
+                        <div class="bigger"><img src="index-images/new15.jpg"></div>
+                        <div class="user7"></div>
+                        <span>dididar<i class="user-sex"></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-8">
+                        <div class="bigger"><img src="index-images/new16.jpg"></div>
+                        <div class="user8"></div>
+                        <span>Raymo<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="travel-1">
+                        <div class="bigger"><img src="index-images/new17.jpg"></div>
+                        <div class="user1"></div>
+                        <span>爽游大秘书<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-2">
+                        <div class="bigger"><img src="index-images/new18.jpg"></div>
+                        <div class="user2"></div>
+                        <span> Dece<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-3">
+                        <div class="bigger"><img src="index-images/new19.jpg"></div>
+                        <div class="user3"></div>
+                        <span>bennypsr<i></i></span>
+                        < <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-4">
+                        <div class="bigger"><img src="index-images/new20.jpg"></div>
+                        <div class="user4"></div>
+                        <span>熊烨<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-5">
+                        <div class="bigger"><img src="index-images/new21.jpg"></div>
+                        <div class="user5"></div>
+                        <span> 路刻社<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-6">
+                        <div class="bigger"><img src="index-images/new22.jpg"></div>
+                        <div class="user6"></div>
+                        <span> SYQ流星<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-7">
+                        <div class="bigger"><img src="index-images/new23.jpg"></div>
+                        <div class="user7"></div>
+                        <span>dididar<i class="user-sex"></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-8">
+                        <div class="bigger"><img src="index-images/new24.jpg"></div>
+                        <div class="user8"></div>
+                        <span>Raymo<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="travel-1">
+                        <div class="bigger"><img src="index-images/new25.jpg"></div>
+                        <div class="user1"></div>
+                        <span>爽游大秘书<i></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-2">
+                        <div class="bigger"><img src="index-images/new26.jpg"></div>
+                        <div class="user2"></div>
+                        <span> Dece<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-3">
+                        <div class="bigger"><img src="index-images/new27.jpg"></div>
+                        <div class="user3"></div>
+                        <span>bennypsr<i></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-4">
+                        <div class="bigger"><img src="index-images/new28.jpg"></div>
+                        <div class="user4"></div>
+                        <span>熊烨<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-5">
+                        <div class="bigger"><img src="index-images/new29.jpg"></div>
+                        <div class="user5"></div>
+                        <span> 路刻社<i class="user-sex"></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-6">
+                        <div class="bigger"><img src="index-images/new30.jpg"></div>
+                        <div class="user6"></div>
+                        <span> SYQ流星<i></i></span>
+                         <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-7">
+                        <div class="bigger"><img src="index-images/new31.jpg"></div>
+                        <div class="user7"></div>
+                        <span>dididar<i class="user-sex"></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                    <div class="travel-8">
+                        <div class="bigger"><img src="index-images/index15.png"></div>
+                        <div class="user8"></div>
+                        <span>Raymo<i></i></span>
+                        <p>【NO.15爽游周刊】中文都没学好 <br/>想个毛线出国旅游</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="travel-footer" id="travel-footer">
+            <ul>
+                <li class="slide-li01"></li>
+                <li class="slide-li02"></li>
+                <li class="slide-li03"></li>
+                <li class="slide-li04"></li>
+                <li class="slide-li05"></li>
+            </ul>
+            <div class="discount">
+                查看更多游记
+            </div>
+        </div>
+    </div>
+</div>
+<!--游记结束-->
+
+<!--发现爽游开始-->
+<div class="more-box">
+    <div class="more w">
+        <div class="more-top">
+            <div class="more-top-left fl">
+                <h3>发现爽游er</h3>
+                <a href="#"><span><img src="index-images/change.png" alt=""/></span>&nbsp;换一换</a>
+            </div>
+            <div class="more-top-right fr">
+                <h3 class="fl">最新目的地点评</h3>
+                <span class="fl">我要点评</span>
+            </div>
+        </div>
+        <div class="more-body">
+            <div class="more-body-left fl">
+                <div class="more-div1">
+                    <div class="more-user1 fl"></div>
+                    <div class="fr more-introduce">
+                        <p class="p1">Fduzjy</p>
+                        <p class="p2">64粉丝</p>
+                        <p class="p3">爽游斯德哥尔摩锦囊作者</p>
+                        <div class="focus">
+                            ＋好友
+                        </div>
+                    </div>
+                </div>
+                <div class="more-div2">
+                    <div class="more-user2 fl"></div>
+                    <div class="fr more-introduce">
+                        <p class="p1">ainvnv</p>
+                        <p class="p2">304粉丝</p>
+                        <p class="p3">爽游精华作者</p>
+                        <div class="focus">
+                            ＋好友
+                        </div>
+                    </div>
+                </div>
+                <div class="more-div3">
+                    <div class="more-user3 fl"></div>
+                    <div class="fr more-introduce">
+                        <p class="p1">Circean龙二喵</p>
+                        <p class="p2">604粉丝</p>
+                        <p class="p3">爽游精华作者</p>
+                        <div class="focus">
+                            ＋好友
+                        </div>
+                    </div>
+                </div>
+                <div class="more-div4">
+                    <div class="more-user4 fl"></div>
+                    <div class="fr more-introduce">
+                        <p class="p1">蓝田玉烟</p>
+                        <p class="p2">43粉丝</p>
+                        <p class="p3">爽游精华作者</p>
+                        <div class="focus">
+                            ＋好友
+                        </div>
+                    </div>
+                </div>
+                <div class="more-div5">
+                    <div class="more-user5 fl"></div>
+                    <div class="fr more-introduce">
+                        <p class="p1">ryanli123</p>
+                        <p class="p2">42粉丝</p>
+                        <p class="p3">摄影资深用户</p>
+                        <div class="focus">
+                            ＋好友
+                        </div>
+                    </div>
+                </div>
+                <div class="more-div6">
+                    <div class="more-user6 fl"></div>
+                    <div class="fr more-introduce">
+                        <p class="p1">zheyanghaoma</p>
+                        <p class="p2">42粉丝</p>
+                        <p class="p3">签证资深用户</p>
+                        <div class="focus">
+                            ＋好友
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="more-body-right fr" id="judge-box">
+                <ul id="judge">
+                    <li>
+                        <div class="li-div">
+                            <span class="judge1"></span>
+                            <div class="judge-title">
+                                <p><span>engzo</span>点评了安联球场</p>
+                                <img src="index-images/wuxing.png">
+                                <p>作为球迷必须去！第二次去曼联刚好是拜 <br/>
+                                    仁最后一场比赛，赶上夺冠庆典了</p>
+                            </div>
+                        </div>
+                        <div class="li-div">
+                            <span class="judge2"></span>
+                            <div class="judge-title">
+                                <p><span>michale</span>点评了夏威夷酒店</p>
+                                <img src="index-images/wuxing.png">
+                                <p>知道什么叫面朝大海春暖花开吗？ <br/>
+                                    这里就是！</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="li-div">
+                            <span class="judge3"></span>
+                            <div class="judge-title">
+                                <p><span>zieiei</span>点评了迈阿密海滩</p>
+                                <img src="index-images/wuxing.png">
+                                <p>热情的美国人，好吃的汉堡，开朗的妹子 <br/>
+                                    一切都是那么美好！</p>
+                            </div>
+                        </div>
+                        <div class="li-div">
+                            <span class="judge4"></span>
+                            <div class="judge-title">
+                                <p><span>小王man</span>点评了泰国三日游</p>
+                                <img src="index-images/wuxing.png">
+                                <p>异域风情！</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="li-div">
+                            <span class="judge5"></span>
+                            <div class="judge-title">
+                                <p><span>zieiei</span>点评了迈阿密海滩</p>
+                                <img src="index-images/wuxing.png">
+                                <p>热情的美国人，好吃的汉堡，开朗的妹子 <br/>
+                                    一切都是那么美好！</p>
+                            </div>
+                        </div>
+                        <div class="li-div">
+                            <span class="judge6"></span>
+                            <div class="judge-title">
+                                <p><span>小王man</span>点评了泰国三日游</p>
+                                <img src="index-images/wuxing.png">
+                                <p>异域风情！</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="li-div">
+                            <span class="judge1"></span>
+                            <div class="judge-title">
+                                <p><span>engzo</span>点评了安联球场</p>
+                                <img src="index-images/wuxing.png">
+                                <p>作为球迷必须去！第二次去曼联刚好是拜 <br/>
+                                    仁最后一场比赛，赶上夺冠庆典了</p>
+                            </div>
+                        </div>
+                        <div class="li-div">
+                            <span class="judge2"></span>
+                            <div class="judge-title">
+                                <p><span>michale</span>点评了夏威夷酒店</p>
+                                <img src="index-images/wuxing.png">
+                                <p>知道什么叫面朝大海春暖花开吗？ <br/>
+                                    这里就是！</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--发现爽游结束-->
+
+<!--底部广告开始-->
+<div class="footer-banner-box">
+    <p style="font-size: 25px;color: #00bbff;text-align: center; ">游世界☞观天气</p>
+    <div class=" container">
+        <div class="footer-banner w">
+            <div class="sunny"></div>
+            <div class="cloudy"></div>
+            <div class="rainy"></div>
+            <div class="snowy"></div>
+            <div class="rainbow"></div>
+            <div class="starry"></div>
+            <div class="stormy"></div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="footer-banner-box">-->
+<!--<div class="footer-banner w">-->
+<!--<img src="index-images/footer-banner.jpg">-->
+<!--</div>-->
+<!--</div>-->
+<!--底部广告开始-->
+
+<!--底部开始-->
+<div class="footer">
+
+    <div class="footer-body-box">
+        <div class="footer-body w">
+            <dl>
+                <dt>关于我们
+                <dd><a href="#">爽游简介</a></dd>
+                <dd><a href="#">关于我们</a></dd>
+                <dd><a href="#">合作伙伴</a></dd>
+                </dt>
+            </dl>
+            <dl>
+                <dt>加入爽游
+                <dd><a href="#">招聘职位</a></dd>
+                </dt>
+            </dl>
+            <dl>
+                <dt>网站条款
+                <dd><a href="#">会员条款</a></dd>
+                <dd><a href="#">社区指南</a></dd>
+                <dd><a href="#">版权声明</a></dd>
+                <dd><a href="#">免责声明</a></dd>
+                </dt>
+            </dl>
+            <dl>
+                <dt>帮助中心
+                <dd><a href="#">新手上路</a></dd>
+                <dd><a href="#">使用帮助</a></dd>
+                <dd><a href="#">网站地图</a></dd>
+                <dd><a href="#">实用工具</a></dd>
+                </dt>
+            </dl>
+            <dl style="width: 100px">
+                <!--地图-->
+                <!--<div class="wrap" style="margin-top: 50px;">-->
+
+                <div class="m_map">
+                    <div class="mp mp1">
+                        <div class="feng">
+                            <div class="tree">
+                                <div class="sang"></div>
+                                <div class="boou"><img src="images/boou.png" alt=""/></div>
+                                <div class="du_size">
+                                    <P>地址：乌鲁木齐央区未央宫街道未央路2号老三届首座大厦11208 </P>
+                                    <P>电话：029-68829598</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mito find_mi1">乌鲁木齐</div>
+                    </div>
+                    <div class="mp mp2">
+                        <div class="feng">
+                            <div class="tree">
+                                <div class="sang"></div>
+                                <div class="boou"><img src="images/boou.png" alt=""/></div>
+                                <div class="du_size">
+                                    <P>地址：西安市未央区未央宫街道未央路2号老三届首座大厦11208 </P>
+                                    <P>电话：029-68829598</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mito">西安</div>
+                    </div>
+                    <div class="mp mp3">
+                        <div class="feng">
+                            <div class="tree">
+                                <div class="sang"></div>
+                                <div class="boou"><img src="images/boou.png" alt=""/></div>
+                                <div class="du_size">
+                                    <P>地址：成都未央区未央宫街道未央路2号老三届首座大厦11208 </P>
+                                    <P>电话：029-68829598</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mito">成都</div>
+                    </div>
+                    <div class="mp mp4">
+                        <div class="feng">
+                            <div class="tree">
+                                <div class="sang"></div>
+                                <div class="boou"><img src="images/boou.png" alt=""/></div>
+                                <div class="du_size">
+                                    <P>地址：重庆未央区未央宫街道未央路2号老三届首座大厦11208 </P>
+                                    <P>电话：029-68829598</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mito">重庆</div>
+                    </div>
+
+                    <div class="mp mp17">
+                        <div class="feng">
+                            <div class="tree">
+                                <div class="sang"></div>
+                                <div class="boou"><img src="images/boou.png" alt=""/></div>
+                                <div class="du_size">
+                                    <P>地址：深圳未央区未央宫街道未央路2号老三届首座大厦11208 </P>
+                                    <P>电话：029-68829598</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mito">深圳</div>
+                    </div>
+
+                    <div class="mp mp23">
+                        <div class="feng">
+                            <div class="tree">
+                                <div class="sang"></div>
+                                <div class="boou"><img src="images/boou.png" alt=""/></div>
+                                <div class="du_size">
+                                    <P>地址：北京未央区未央宫街道未央路2号老三届首座大厦11208 </P>
+                                    <P>电话：029-68829598</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mito">北京</div>
+                    </div>
+
+                    <div class="mp mp26">
+                        <div class="feng">
+                            <div class="tree">
+                                <div class="sang"></div>
+                                <div class="boou"><img src="images/boou.png" alt=""/></div>
+                                <div class="du_size">
+                                    <P>地址：长春未央区未央宫街道未央路2号老三届首座大厦11208 </P>
+                                    <P>电话：029-68829598</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mito">长春</div>
+                    </div>
+                    <div class="mp mp27">
+                        <div class="feng">
+                            <div class="tree">
+                                <div class="sang"></div>
+                                <div class="boou"><img src="images/boou.png" alt=""/></div>
+                                <div class="du_size">
+                                    <P>地址：哈尔滨未央区未央宫街道未央路2号老三届首座大厦11208 </P>
+                                    <P>电话：029-68829598</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mito find_mi2">哈尔滨</div>
+                    </div>
+
+                    <div class="mp mp40">
+                        <div class="feng">
+                            <div class="tree">
+                                <div class="sang"></div>
+                                <div class="boou"><img src="images/boou.png" alt=""/></div>
+                                <div class="du_size">
+                                    <P>地址：石家庄岛未央区未央宫街道未央路2号老三届首座大厦11208 </P>
+                                    <P>电话：029-68829598</P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mito find_mi2">石家庄</div>
+                    </div>
+
+                </div>
+            </dl>
+            </div>
+        </div>
+    </div>
+    <div class="fo0oter-bottom-box">
+        <div class="w footer-bottom">
+            <div class="footer-copyright">
+                <!--<div class="copyright-left fl"><img src="index-images/logo_gray_r.png" width="84" height="36"></div>-->
+                <div class="copyright-middle fl">
+                    2004-2016 © 爽游网® qyer.com All rights reserved. Version v5.57 京ICP备12003524号 京公网安备11010102001935
+                    京ICP证140673号
+                    爽游网为旅行者提供原创实用的出境游旅行指南和旅游攻略、旅行社区和问答交流平台，并提供签证、保险、机票、酒店预订、租车等服务。
+                </div>
+                <div class="copyright-right fr" id="lym_copyright" style="position: absolute; right: -80px;" >
+                    <img src="index-images/pic1.png" width="100" height="36">
+                </div>
+            </div>
+            <div class="footer-link">
+                <p class="link-left fl">友情链接</p>
+                <div class="link-right fl">
+                    <a href="#">悠哉旅游网</a> | <a href="#">首都航空</a> | <a href="#">房车租赁</a> |
+                    <a href="#">在线教育</a> | <a href="#">自驾租车</a> | <a href="#">金运之旅</a> | <a href="#">豌豆荚安卓市场</a> |
+                    <a href="#">凤凰网旅游</a> | <a href="#">凯撒旅游</a> | <a href="#">神州租车</a> |
+                    <a href="#">国际租车</a> | <a href="#">携程攻略社区</a>
+                    | <a href="#">蜂鸟网</a> | <a href="#">天巡国际机票</a> | <a href="#">游谱旅行网</a> | <a href="#">中国签证资讯网</a> |
+                    <a href="#">梦之旅</a> | <a href="#">九游网</a>
+                    | <a href="#">北京国旅官网</a> | <a href="#">同程旅游</a> | <a href="#">腾邦国际</a> | <a href="#">相约久久旅游网</a> |
+                    <a href="">途牛旅游网</a> | <a href="#">日租房</a>
+                    | <a href="#">遨游网</a> | <a href="#">携程旅游网</a> | <a href="#">春秋航空</a> | <a href="#">搜狗壁纸</a> |
+                    <a href="#">户外资料网</a> | <a href="#">爱旅行网</a> |
+                    <a href="#">途风网</a> | <a href="#">神舟国旅</a> | <a href="#">拉拉勾旅游网</a> | <a href="#">火车票</a> |
+                    <a href="#">劲旅网</a> | <a href="#">米胖旅游网</a> | <a href="#">五分旅游网</a>
+                    | <a href="#">绿野网</a> | <a href="#">天气预报15天查询</a> | <a href="#">走遍欧洲</a> | <a href="#">酒店预订</a> |
+                    <a href="#">欣欣旅游网</a> | <a href="#">驴妈妈旅游网</a>| <a href="#">多多驿站</a> | <a href="#">艺龙旅游指南</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部结束-->
+
+<!--返回顶部开始-->
+<div id="returnTop">
+    <img src="index-images/top.png">
+</div>
+<!--返回顶部结束-->
+
+<script src="index-javascript/index.js"></script>
+<script src="index-javascript/jquery-1.12.4.js"></script>
+<script>
+    $(document).ready(function () {
+        //头部搜索框
+        $(".header-button").click(function () {
+            $(".right-search").animate({
+                "opacity": "1"
+            }, 600);
+        });
+        $(".nav").mouseleave(function () {
+            $(".right-search").animate({
+                "opacity": "0"
+            }, 600);
+        });
+        //顶部子导航
+        $(".community").mouseenter(function () {
+            $(".travel-nav").slideDown();
+        });
+        $(".reserve").mouseenter(function () {
+            $(".yuding-nav").slideDown();
+        });
+        $(".nav").mouseleave(function () {
+            $(".travel-nav").slideUp();
+            $(".yuding-nav").slideUp();
+        });
+
+        //header-line
+        $("#main-body .div4").mouseenter(function () {
+            $(".header-line").stop().animate({
+                "width": "275px"
+            }, 1000);
+        });
+        $("#main-body .div4").mouseleave(function () {
+            $(".header-line").stop().animate({
+                "width": "0px"
+            }, 1000);
+        });
+
+        //当前高亮显示
+        $("#main-body div").mouseenter(function () {
+            $(this).css("opacity", "1").siblings("div").css("opacity", "0.4");
+            $("#main-body .div4").css("opacity", "1");
+        });
+        $("#main-body").mouseleave(function () {
+            $("#main-body div").css("opacity", "1");
+        });
+
+        //话题与游记
+        $(".bigger img").mouseenter(function () {
+            $(this).stop().animate({
+                "width": "412px",
+                "height": "277px",
+                "left": "-68px",
+                "top": "-46px"
+            }, 1000);
+        });
+
+        $(".bigger img").mouseleave(function () {
+            $(this).stop().animate({
+                "width": "275px",
+                "height": "185px",
+                "left": "0px",
+                "top": "0px"
+            }, 1000);
+        });
+
+        //关闭固定登陆栏
+        $("#login-box").mouseenter(function () {
+            $("#login-close").css("display", "block");
+        });
+        $("#login-box").mouseleave(function () {
+            $("#login-close").css("display", "none");
+        });
+        $("#login-close").click(function () {
+            $("#login-box").fadeOut(800);
+        });
+
+        //返回顶部案例
+        $(window).scroll(function () {
+            var scrollHeight = $(this).scrollTop();
+            if (scrollHeight > 100) {
+                $("#returnTop").fadeIn(300);
+            }
+            else {
+                $("#returnTop").fadeOut(300);
+            }
+        });
+        $('#returnTop').click(function () {
+            $('html,body').animate({scrollTop: '0px'}, 1000);
+        });
+
+    });
+</script>
+<script>
+    $(function () {
+        $("#lym_app").mouseover(function () {
+            $(this).css("display","none");
+            $("#lym_footer").css("display","");
+            $("#lym_footer").css("cursor","pointer");
+        });
+//        $("#lym_app").mouseout(function () {
+//            $(this).css("display","block");
+//            $("#lym_footer").css("visibility","hidden");
+//            $("#lym_footer").css("cursor","pointer");
+//        });
+    });
+</script>
+<script>
+    $(function () {
+        $("#lym_copyright").mouseover(function () {
+            $(this).offset({"left":1040});
+        });
+
+        $("#lym_copyright").mouseout(function () {
+            $(this).offset({"left":1190});
+        });
+    });
+</script>
+
+</body>
+</html>

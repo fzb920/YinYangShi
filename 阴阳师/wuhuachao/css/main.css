@@ -1,0 +1,336 @@
+
+@charset "utf-8";
+body {
+    background-color: #F6F2E6;
+}
+
+.newFast {
+    width: 275px;
+    height: 560px;
+    overflow: hidden;
+    float: right;
+    padding-left: 15px;
+    border-left: 1px dotted #91CF6C;
+}
+
+.newFast .fast {
+    width: 239px;
+    height: 476px;
+    border: 1px solid #E0E0E0;
+    margin-top: 8px;
+    position: relative;
+    padding: 18px 17px 0;
+}
+
+.fastMain {
+    height: 470px;
+    overflow: hidden;
+}
+
+.fastMain ul {
+    height: 9999px;
+}
+
+.fastMain li {
+    overflow: hidden;
+    padding: 6px 0;
+    height: 81px;
+    border-bottom: 1px dotted #91CF6C;
+}
+
+.fastMain .img {
+    float: left;
+    width: 110px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.fastMain .img a{
+    width: 310px;
+    height: 210px;
+    display: inline-block;
+}
+.fastMain .img img{
+    width: 100px;
+    height: 80px;
+    position: absolute;
+}
+
+.fastMain .des {
+    float: right;
+    width: 148px;
+    height: 73px;
+    margin-left: 10px;
+}
+
+.fastMain .des a {
+    color: #333;
+    font-weight: bold;
+    line-height: 22px;
+    height: 22px;
+}
+
+.fastMain .des a i {
+    margin-right: 5px;
+    font-style: normal;
+    color: #AC411D;
+}
+
+#jq .fastMain .des {
+    width: 118px;
+    text-align: center;
+    line-height: 73px;
+}
+
+#jq .fastMain .des a:hover {
+    color: #AC411D;
+}
+
+a.mainTit {
+    width: 95px;
+    height: 20px;
+    overflow: hidden;
+    display: inline-block;
+    background: url(../images/mainTit.gif) no-repeat;
+    position: absolute;
+    left: 11px;
+    top: -10px;
+    text-indent: -9999px;
+}
+
+a.more {
+    width: 28px;
+    padding-left: 28px;
+    height: 16px;
+    line-height: 16px;
+    color: #333;
+    overflow: hidden;
+    display: inline-block;
+    background: url(../images/moreGray.gif) no-repeat 7px 0 #F6F2E6;
+    position: absolute;
+    right: 11px;
+    top: -9px;
+    z-index: 1000;
+}
+
+.more:hover {
+    background-position: 7px -16px;
+    color: #AC411D;
+}
+
+.newFast .nextPreBtn {
+    height: 25px;
+    overflow: hidden;
+    background: url(../images/nowBtnXX.png) no-repeat bottom;
+    padding-top: 6px;
+
+}
+
+.newFast .nextPreBtn a {
+    width: 29px;
+    height: 25px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.nextNow {
+    background: url(../images/nextNow.png) no-repeat 0 0;
+    margin-left: 104px;
+    z-index: 44;
+}
+
+.prevNow {
+    background: url(../images/prevNow.png) no-repeat 0 0;
+    z-index: 44;
+}
+
+.nextNow:hover, .prevNow:hover {
+    background-position: 0 -25px;
+}
+
+/*information结束*/
+
+/*摄影教程开始*/
+.course {
+    margin: 8px auto 26px;
+    position: relative;
+}
+.sy {
+    width: 693px;
+    height: 693px;
+    float: left;
+    position: relative;
+    border: 1px solid #B1AEA7;
+    background: url(../images/jcBg.gif) no-repeat;
+}
+
+.course .pos {
+    position: absolute;
+}
+.course .pos1,.pos2,.pos3,.pos4,.pos5{
+    opacity: 0;
+}
+
+.course .pos1 {
+    left: 50%;
+    top: 50%;
+    width: 134px;
+    height: 140px;
+    margin-left: -67px;
+    margin-top: -70px;
+}
+
+.course .pos ul {
+    width: 139px;
+    height: 144px;
+    overflow: hidden;
+}
+
+.course .pos li {
+    height: 24px;
+    width: 124px;
+    padding-left: 15px;
+    overflow: hidden;
+    float: left;
+    background: url(../images/blackList.gif) no-repeat 6px 8px;
+}
+
+.course .pos .img {
+    width: 130px;
+    height: 420px;
+    overflow: hidden;
+
+}
+
+.course .pos a {
+    display: inline-block;
+    height: 60px;
+    margin-bottom: 8px;
+    margin-right: 7px;
+}
+
+.course .pos3 .img a {
+
+    margin-bottom: 10px;
+}
+
+.course .pos3 .img {
+
+    margin-top: -150px;
+}
+
+.course .pos3 ul {
+    position: relative;
+    float: left;
+    top: 110px;
+    left: 0px;
+
+}
+
+.course .pos4 ul {
+    margin-left: 128px;
+
+}
+
+.course li a {
+    line-height: 24px;
+    color: #222;
+}
+
+.course li a:hover {
+    color: #569231;
+    text-decoration: underline;
+}
+
+.course .pos2 {
+    right: 10px;
+    top: 10px;
+    width: 280px;
+    height: 270px;
+}
+
+.course .pos2 ul {
+    margin-top: -10px;
+    margin-left: 13px;
+}
+
+.course .pos3 {
+    right: 10px;
+    bottom: 30px;
+    width: 263px;
+    height: 356px;
+
+}
+
+.course .pos4 {
+    left: 10px;
+    bottom: 10px;
+    width: 280px;
+    height: 270px;
+}
+
+.course .pos5 {
+    top: 30px;
+    left: 10px;
+    width: 280px;
+    height: 358px;
+}
+
+.course .pos5 .img {
+    margin: 0;
+}
+
+.course .pos5 ul {
+    margin-top: 100px;
+}
+
+.course .tit3 {
+    background-position: 0 -40px;
+    z-index: 2;
+}
+
+.course .tit4 {
+    background-position: 0 -60px;
+    z-index: 2;
+}
+
+.course .newFast {
+    height: 695px;
+}
+
+.course .newFast .fast {
+    height: 626px;
+}
+
+.course .newFast .fast li {
+    padding: 10px 0px;
+}
+
+.course .newFast .fastMain {
+    height: 610px;
+}
+.newFast .img img{
+    width: 100%;
+    height: 100%;
+}
+/*摄影教程结束*/
+
+/*灵感渲染开始*/
+.apply {
+    width: 998px;
+    height: 605px;
+    border: 1px solid #B1AEA7;
+    margin-top: 25px;
+    background: url(../images/LgTitBg.gif) no-repeat center 16px;
+    position: relative;
+    margin-bottom: 35px;
+    padding-top: 28px;
+}
+.apply .tit6 {
+    background-position: 0 -100px;
+    left: 451px;
+}
+
+
+/*灵感渲染结束*/
